@@ -1,7 +1,3 @@
 apply plugin: 'java'
 
-mainClass="SimpleTest"
-task execute(type:JavaExec){
-	main = mainClass
-	classpath = sourceSets.main.runtimeClasspath
-}
+
