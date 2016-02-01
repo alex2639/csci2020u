@@ -4,15 +4,20 @@ repositories {
 	mavenCentral()
 }
 
+//dependencies{
+	
+//	compile group: 'commons-csv', name: 'commons-csv', version: '1.2'
 
+//}
 
 sourceCompatibility = 1.7
 version = '1.0.1'
 
 jar{
 	manifest{
-		attributes 'Main-Class': 'lab02',
+		attributes 'Main-Class': 'simpleTest.SimpleTest',
 			   'Implementation-Title': 'Lab 02 v1.0.1',
 			   'Implementation-Version': version
 	}
 }
+
