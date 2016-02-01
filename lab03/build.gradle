@@ -11,6 +11,7 @@ dependencies{
 sourceCompatibility=1.7
 version = '1.0'
  jar {
+
     manifest {
         attributes  'Main-Class': 'CSVDemo',
                     'Implementation-Title': 'lab03',
@@ -18,17 +19,18 @@ version = '1.0'
     }
  }
 
- buildscript {
-    repositories {
-       flatDir dirs: '/home/pkmn-master/proguard5.2.1/lib'
-    }
-    dependencies {
-       classpath ':proguard:'
-    }
-  }
+buildscript {
+   repositories {
+      flatDir dirs: '/home/pkmn-master/proguard5.2.1/lib'
+   }
+   dependencies {
+      classpath ':proguard'
+   }
+}
 
- task(minify, dependsOn: 'jar', type: proguard.gradle.ProguardTask){
- 	configuration 'proguard.cfg'
- 	injars 'build/libs/lab03-1.0.jar'
- 	outjars 'build/libs/lab03-1.0.min.jar'
- }
+task (minify, dependsOn: 'jar', type: proguard.gradle.ProGuardTask) {
+   configuration 'proguard.cfg'
+
+   injars 'build/libs/lab03-1.0.jar'
+  	outjars 'build/libs/lab03-1.0.min.jar'
+}
